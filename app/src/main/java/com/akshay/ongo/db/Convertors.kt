@@ -3,7 +3,7 @@ package com.akshay.ongo.db
 import androidx.room.TypeConverter
 import com.akshay.ongo.Source
 
-class Convertors {
+class Converters {
 
     @TypeConverter
     fun fromSource(source: Source): String {
@@ -14,6 +14,4 @@ class Convertors {
     fun toSource(name: String): Source {
         return Source(name, name)
     }
-
-
 }

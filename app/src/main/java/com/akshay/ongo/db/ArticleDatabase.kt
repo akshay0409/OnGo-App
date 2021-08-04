@@ -7,13 +7,12 @@ import com.akshay.ongo.Article
 
 @Database(
     entities = [Article::class],
-    version=1
+    version = 1
 )
+@TypeConverters(Converters::class)
+abstract class ArticleDatabase : RoomDatabase() {
 
-@TypeConverters(Convertors:class)
-abstract class ArticleDatabase:RoomDatabase() {
-
-    abstract fun getArticleDao():ArticleDao
+    abstract fun getArticleDao(): ArticleDao
 
     companion object {
         @Volatile
@@ -31,5 +30,4 @@ abstract class ArticleDatabase:RoomDatabase() {
                 "article_db.db"
             ).build()
     }
-
 }
